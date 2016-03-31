@@ -11,3 +11,5 @@ Then just add class calc and data attribut for currency format data="N" or data=
 
 To using round decimal add format data="N-2" for 2 decimal place
 <pre>&lt;input type="text" class="calc" data="N-2"/&gt;</pre>
+
+<a href="http://codepen.io/hangsbreaker/pen/VLbJdd">DEMO Here</a>
