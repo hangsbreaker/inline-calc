@@ -32,12 +32,12 @@ forEach.call(calc, function (el, i) {
         }
     }
     function mouseDown(){
-        /*if(calcr[i].value != ''){
+        if(calcr[i].value != ''){
             calc[i].value = calcr[i].value;enKey = false;
-        }*/
+        }
     }
     function onBlur(){
-        //if(enKey){enKey = false;}else{doCalc();}
+        if(enKey){enKey = false;}else{doCalc();}
     }
     
     
