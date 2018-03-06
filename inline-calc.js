@@ -32,13 +32,14 @@ forEach.call(calc, function (el, i) {
         }
     }
     function mouseDown(){
-        if(calcr[i].value != ''){
+        /*if(calcr[i].value != ''){
             calc[i].value = calcr[i].value;enKey = false;
-        }
+        }*/
     }
     function onBlur(){
-        if(enKey){enKey = false;}else{doCalc();}
+        //if(enKey){enKey = false;}else{doCalc();}
     }
+    
     
     el.addEventListener('mousedown',mouseDown);
     el.addEventListener('blur',onBlur);
@@ -49,19 +50,23 @@ forEach.call(calc, function (el, i) {
             doCalc();
         }
     });
-});
-// Label for copy
-var calcc = document.querySelectorAll('.calcc');
-var forEach = [].forEach;
-forEach.call(calcc, function (el, i) {
+    
+    var calcc = document.querySelectorAll('.calcc');
     function mouseEnter(){
-        calcc[i].innerHTML = calc[i].value;
+        calcc[i].innerHTML = "Copy";
         calcc[i].style.padding = "6px 6px 6px 5px";
     }
     function mouseOut(){
         calcc[i].innerHTML = "c";
         calcc[i].style.padding = "0px 2px 0px 2px";
     }
-el.addEventListener('mouseenter',mouseEnter);
-el.addEventListener('mouseout',mouseOut);
+    function copyText(){
+        calc[i].select();
+        document.execCommand("Copy");
+        calcc[i].innerHTML = "Copied: "+calc[i].value;
+        calcc[i].style.padding = "6px 6px 6px 5px";
+    }
+    calcc[i].addEventListener('mouseenter',mouseEnter);
+    calcc[i].addEventListener('mouseout',mouseOut);
+    calcc[i].addEventListener('mousedown',copyText);
 });
