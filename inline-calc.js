@@ -1,5 +1,5 @@
 /*! Created By: Hangs Breaker */
-document.getElementsByTagName("head")[0].insertAdjacentHTML('beforeend','<style>.inlinecalc{display:inline-block;}.calc{vertical-align:top;display:block;min-height:34px;padding: 4px 12px 2px 15px;font-size:14px;line-height: 1.42857;color: #555;background-color: #FFF;background-image: none;border: 1px solid #CCC;border-radius: 4px;box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;margin-left:8px;text-align:right;}.calcc{position:absolute;margin-left:8px;background:#EEEEEE;border:1px solid #ccc;border-radius:5px;min-width:9px;min-height:5px;display:block;padding:0px 2px 0px 2px;font-family:Arial;color:#555}</style>');
+document.getElementsByTagName("head")[0].insertAdjacentHTML('beforeend','<style>.calc{vertical-align:top;display:block;min-height:34px;padding: 4px 12px 2px 15px;font-size:14px;line-height: 1.42857;color: #555;background-color: #FFF;background-image: none;border: 1px solid #CCC;border-radius: 4px;box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;margin-left:8px;text-align:right;}.calcc{position:absolute;margin-left:8px;background:#EEEEEE;border:1px solid #ccc;border-radius:5px;min-width:9px;min-height:5px;display:block;padding:0px 2px 0px 2px;font-family:Arial;color:#555}</style>');
 
 var enKey = false;
 var calc = document.querySelectorAll('.calc');
@@ -8,11 +8,6 @@ forEach.call(calc, function (el, i) {
     //calc[i].setAttribute("onblur", "calcs()");
     //calc[i].setAttribute("onclick", "getcalcs()");
     //calc[i].setAttribute("onkeypress", "handle(event)");
-    var wrapper = document.createElement('div');
-    wrapper.setAttribute('class','inlinecalc');
-    calc[i].parentNode.insertBefore(wrapper, calc[i]);
-    wrapper.appendChild(calc[i]);
-
     calc[i].insertAdjacentHTML('beforeBegin','<div class="calcc">c</div>');
     calc[i].insertAdjacentHTML('afterEnd','<input type="hidden" class="calcr" style="display:none;"/>');
     var calcr = document.querySelectorAll('.calcr');
